@@ -106,7 +106,7 @@
             var $newPanel = $template.clone();
             $newPanel.find(".collapse").removeClass("in");
             $newPanel.find(".accordion-toggle").attr("href", "#" + (++hash))
-                .text("New" + hash);
+                .text("New " + hash);
             $newPanel.find(".panel-collapse").attr("id", hash);
             $("#accordion").append($newPanel.fadeIn());
         });
