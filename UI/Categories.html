@@ -100,19 +100,19 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
     <script>
-        var $template = $(".cardtemplate");
-        var hash = 2;
+        var $template = $(".cardtemplate"); //from class card template to end
+        var hash = 1; //Unique id
         $(".btn-add-panel").on("click", function() {
-            var $newPanel = $template.clone();
-            $newPanel.find(".collapse").removeClass("in");
-            $newPanel.find(".accordion-toggle").attr("href", "#" + (++hash))
+            var $newPanel = $template.clone(); //Copy the class and every thing in it
+
+            $newPanel.find(".accordion-toggle").attr("href", "#" + (++hash)) //#collapse changes to #Number
                 .text("New " + hash);
-            $newPanel.find(".panel-collapse").attr("id", hash);
-            $("#accordion").append($newPanel.fadeIn());
+            $newPanel.find(".panel-collapse").attr("id", hash); //Number to the panel collapse
+            $("#accordion").append($newPanel.fadeIn()); //Add that card to the accordion with a fade
         });
 
         $(document).on('click', '#deleteMe', function() {
-            $(this).parents('.panel').get(0).remove();
+            $(this).parents('.panel').remove(); //get current element,get parent(cardTemplate),remove
         });
     </script>
 
