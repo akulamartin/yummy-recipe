@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %}User Registration{% endblock %} {% block body %}
+
+<form class="form-signin">
+    <h2 class="form-signin-heading">Welcome new user</h2>
+
+    <label for="inputUserFirstname" class="sr-only">First name</label>
+    <input type="text" id="inputUserFirstname" class="form-control" placeholder="First name" required autofocus>
+
+    <label for="inputUserLastname" class="sr-only">Last name</label>
+    <input type="text" id="inputUserLastname" class="form-control" placeholder="Last name" required>
+
+    <label for="inputCreateEmail" class="sr-only">Email</label>
+    <input type="email" id="inputCreateEmail" class="form-control" placeholder="E-mail" required>
+
+    <label for="inputCreateUsername" class="sr-only">Username</label>
+    <input type="text" id="inputCreateUsername" class="form-control" placeholder="Username" required>
+
+
+    <label for="inputCreatePassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+    <br />
+
+    <a class="btn btn-lg btn-primary btn-block" href="/Categories">Create</a>
+</form>
+
+
+{%endblock%}
