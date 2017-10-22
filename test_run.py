@@ -9,4 +9,6 @@ class TestApp(unittest.TestCase):
 def setUp(self):
         app.config['DEBUG']=True
                 
-                
+
+if __name__ == '__main__':
+       unittest.main()
