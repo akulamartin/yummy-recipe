@@ -7,7 +7,7 @@ from app import app
 class TestApp(unittest.TestCase):
  """This tests the initialisation"""
 def setUp(self):
-        app.config['DEBUG']=True
+        app.config['DEBUG']=False
                 
 
 if __name__ == '__main__':
