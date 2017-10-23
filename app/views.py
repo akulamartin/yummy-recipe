@@ -28,7 +28,7 @@ def Categories():
 def UserRegistration():
     form = User()
     if form.validate_on_submit():
-     #return render_template("index.html")
+       
      return '{}. {}. {}.'.format(form.regusername.data, form.regpassword.data, form.regfirstname.data)
     return render_template("UserRegistration.html",form=form)
 
