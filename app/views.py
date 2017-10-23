@@ -11,11 +11,11 @@ login_manager.init_app(app)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     user=User()
-    if request.method=="POST":
+    if request.method=='POST':
         username=request.form['Username']
         password=request.form['Password']
         if user.login_User(username,password):
-            return 'All Good'
+         return 'All Good'
     return render_template("index.html",)
 
 
