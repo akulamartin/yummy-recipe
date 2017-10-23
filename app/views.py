@@ -1,6 +1,6 @@
 # views.py
 
-from flask import render_template,session
+from flask import render_template,request
 from flask_login import login_required,LoginManager 
 from .forms import User,Registration
 from app import app
@@ -10,6 +10,12 @@ login_manager.init_app(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    user=User()
+    if request.method=="POST":
+        username=request.form['Username']
+        password=request.form['Password']
+        if user.login_User(username,password):
+            return 'All Good'
     return render_template("index.html",)
 
 
