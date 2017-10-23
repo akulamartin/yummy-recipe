@@ -1,9 +1,11 @@
 # views.py
 
 from flask import render_template
-from flask_login import login_required 
+from flask_login import login_required,LoginManager 
 from app import app
 
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
