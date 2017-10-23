@@ -1,8 +1,8 @@
 # views.py
 
-from flask import render_template
+from flask import render_template,session
 from flask_login import login_required,LoginManager 
-from .forms import User
+from .forms import User,Register
 from app import app
 
 login_manager = LoginManager()
@@ -10,7 +10,7 @@ login_manager.init_app(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
+    return render_template("index.html",)
 
 
 @app.route('/ForgotPassword', methods=['GET', 'POST'])
@@ -26,11 +26,15 @@ def Categories():
 
 @app.route('/UserRegistration', methods=['GET', 'POST'])
 def UserRegistration():
-    form = User()
-    if form.validate_on_submit():
+    form = Register()
+    if form.validate_on_submit():   
+     session['username']=form.regusername   
      return render_template("index.html",message='Success')     
     return render_template("UserRegistration.html",form=form)
 
 
+app.route('/logout')
+def logout():
+    return render_template("index.html")
     
 
