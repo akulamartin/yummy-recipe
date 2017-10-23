@@ -1,7 +1,7 @@
 # views.py
 
 from flask import render_template
-
+from flask_login import login_required 
 from app import app
 
 
@@ -16,6 +16,7 @@ def about():
 
 
 @app.route('/Categories', methods=['GET', 'POST'])
+@login_required
 def Categories():
     return render_template("Categories.html")
 
