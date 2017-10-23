@@ -7,11 +7,11 @@
     <h2 class="form-signin-heading">Welcome new user</h2>
     {{form.hidden_tag()}}
 
-     {{render_UserRegistration(form.regfirstname,placeholder=form.regfirstname.label.text)}}
-     {{render_UserRegistration(form.reglastname,placeholder=form.reglastname.label.text)}}
-     {{render_UserRegistration(form.regemail,placeholder=form.regemail.label.text)}}
-     {{render_UserRegistration(form.regusername,placeholder=form.regusername.label.text)}}
-     {{render_UserRegistration(form.regpassword,placeholder=form.regpassword.label.text)}}
+     {{ render_UserRegistration(form.regfirstname,placeholder=form.regfirstname.label.text) }}
+     {{ render_UserRegistration(form.reglastname,placeholder=form.reglastname.label.text)   }}
+     {{ render_UserRegistration(form.regemail,placeholder=form.regemail.label.text)         }}
+     {{ render_UserRegistration(form.regusername,placeholder=form.regusername.label.text)   }}
+     {{ render_UserRegistration(form.regpassword,placeholder=form.regpassword.label.text)   }}
     <br />
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>

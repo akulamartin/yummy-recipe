@@ -10,12 +10,12 @@ login_manager.init_app(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-#    user=User()
-#    if request.method=="POST":
-#        username=request.form['Username']
-#        password=request.form['Password']
-#        if user.login_User(username,password):
-#            return 'All Good'
+    user=User()
+    if request.method=="POST":
+        username=request.form['Username']
+        password=request.form['Password']
+        if user.login_User(username,password):
+            return 'All Good'
     return render_template("index.html",)
 
 
@@ -33,9 +33,10 @@ def Categories():
 @app.route('/UserRegistration', methods=['GET', 'POST'])
 def UserRegistration():
     form = Registration()
-    #user=User()
+    user=User()
     if form.validate_on_submit(): 
-     #user.register_User(form.regfirstname,form.reglastname,form.regemail,form.regusername,form.regpassword)       
+     user.register_User(form.regfirstname,form.reglastname,form.regemail,form.regusername,form.regpassword)       
+     #return '{}. {}. {}.'.format(form.regusername.data, form.regpassword.data,form.regfirstname.data)
      return render_template("index.html",message='Success')     
     return render_template("UserRegistration.html",form=form)
 
