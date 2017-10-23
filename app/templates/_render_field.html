@@ -1,0 +1,5 @@
+{% macro render_UserRegistration(field) %}
+<label for="{{field.name}}" class="sr-only">{{field.label.text}}</label>
+<!--<input type="text" id="inputUserFirstname" class="form-control" placeholder="First name">-->
+{{field(class_='form-control',**kwargs)|safe}}
+ {% endmacro %}

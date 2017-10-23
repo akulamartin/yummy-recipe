@@ -5,9 +5,9 @@ from flask_login import UserMixin
 
 
 class RegisterForm(FlaskForm):
-    regfirstname = StringField('regfirstname', validators=[InputRequired()])
-    reglastname = StringField('reglastname', validators=[InputRequired()])
-    regemail = StringField('regemail', validators=[InputRequired(), Email('Invalid Email')])
-    regusername = StringField('regusername', validators=[InputRequired()])
-    regpassword = PasswordField('regpassword', validators=[InputRequired()])
+    regfirstname = StringField('First name', validators=[InputRequired()])
+    reglastname = StringField('Last name', validators=[InputRequired()])
+    regemail = StringField('E-mail', validators=[InputRequired(), Email('Invalid Email')])
+    regusername = StringField('Username', validators=[InputRequired()])
+    regpassword = PasswordField('Password', validators=[InputRequired()])
 
