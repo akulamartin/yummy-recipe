@@ -2,4 +2,9 @@
 <label for="{{field.name}}" class="sr-only">{{field.label.text}}</label>
 <!--<input type="text" id="inputUserFirstname" class="form-control" placeholder="First name">-->
 {{field(class_='form-control',**kwargs)|safe}}
+<ul>
+{% for error in field.errors %}
+<li style="color: red;">[{{ error }}]</li>
+{% endfor %}
+</ul>
  {% endmacro %}
