@@ -2,7 +2,6 @@
 import unittest
 
 from app import app
-import flask_login
 
 class TestApp(unittest.TestCase):
  """This tests the initialization"""
