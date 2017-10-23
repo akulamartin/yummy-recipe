@@ -10,3 +10,4 @@ class RegisterForm(FlaskForm):
     regemail = StringField('regemail', validators=[InputRequired(), Email('Invalid Email')])
     regusername = StringField('regusername', validators=[InputRequired()])
     regpassword = PasswordField('regpassword', validators=[InputRequired()])
+
