@@ -2,7 +2,7 @@
 
 from flask import render_template
 from flask_login import login_required,LoginManager 
-from .forms import RegisterForm
+from .forms import User
 from app import app
 
 login_manager = LoginManager()
@@ -26,10 +26,10 @@ def Categories():
 
 @app.route('/UserRegistration', methods=['GET', 'POST'])
 def UserRegistration():
-    form = RegisterForm()
+    form = User()
     if form.validate_on_submit():
-     return render_template("Categories.html", form=form)
-
+     #return render_template("index.html")
+     return '{}. {}. {}.'.format(form.regusername.data, form.regpassword.data, form.regfirstname.data)
     return render_template("UserRegistration.html",form=form)
 
 
