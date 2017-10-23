@@ -30,7 +30,7 @@ def UserRegistration():
     if form.validate_on_submit():
      return render_template("Categories.html", form=form)
 
-    return render_template("UserRegistration.html")
+    return render_template("UserRegistration.html",form=form)
 
 
     
