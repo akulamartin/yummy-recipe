@@ -4,7 +4,7 @@ from wtforms.validators import Email, InputRequired
 
 userlist={}
 class User(object):
- def __init__(self,firstname,lastname,email,username,userpassword):
+ def __init__(self,firstname=None,lastname=None,email=None,username=None,userpassword=None):
           self.firstname=firstname
           self.lastname=lastname
           self.email=email

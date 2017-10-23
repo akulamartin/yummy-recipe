@@ -27,7 +27,9 @@ def Categories():
 @app.route('/UserRegistration', methods=['GET', 'POST'])
 def UserRegistration():
     form = Registration()
-    if form.validate_on_submit():      
+    user=User()
+    if form.validate_on_submit():
+     user.register_User(form.regfirstname,form.reglastname,form.regemail,form.regusername,form.regpassword)       
      return render_template("index.html",message='Success')     
     return render_template("UserRegistration.html",form=form)
 
