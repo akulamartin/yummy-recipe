@@ -1,6 +1,6 @@
 # views.py
 
-from flask import render_template,request
+from flask import render_template,request,session
 from flask_login import login_required,LoginManager 
 from .forms import User,Registration
 from app import app
@@ -34,8 +34,7 @@ def Categories():
 def UserRegistration():
     form = Registration()
     user=User()
-    if form.validate_on_submit(): 
-     user.register_User(form.regfirstname,form.reglastname,form.regemail,form.regusername,form.regpassword)       
+    if form.validate_on_submit():             
      #return '{}. {}. {}.'.format(form.regusername.data, form.regpassword.data,form.regfirstname.data)
      return render_template("index.html",message='Success')     
     return render_template("UserRegistration.html",form=form)
