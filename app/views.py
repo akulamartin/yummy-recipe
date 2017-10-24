@@ -25,7 +25,7 @@ def about():
 
 
 @app.route('/Categories', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def Categories():
     return render_template("Categories.html")
 
@@ -35,13 +35,15 @@ def UserRegistration():
     form = Registration()
     user=User()
     if form.validate_on_submit():             
+     session['Martin']=[form.regusername.data,form.regpassword.data]
      #return '{}. {}. {}.'.format(form.regusername.data, form.regpassword.data,form.regfirstname.data)
      return render_template("index.html",message='Success')     
     return render_template("UserRegistration.html",form=form)
 
 
-app.route('/logout')
+app.route('/logout', methods=['GET', 'POST'])
 def logout():
+    session.pop()
     return render_template("index.html")
     
 
