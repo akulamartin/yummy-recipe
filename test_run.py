@@ -4,6 +4,7 @@ import run
 from app.classes.category import Category
 from app.classes.recipe import Recipe
 from app.classes.User import User
+from app import views
 
 class TestCategory(unittest.TestCase):
     """This class tests the category class"""
