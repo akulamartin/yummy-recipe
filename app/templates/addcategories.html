@@ -1,0 +1,55 @@
+{%extends "layout.html"%}{%block title%}Categories{%endblock%} {%block body%}
+
+<a class="float-right btn btn-primary" href="/logout">Log Out</a>
+<h2 class="form-signin-heading">Welcome,{{session.email}}</h2>
+<h2 class="form-signin-heading">Start by creating a category for your recipe</h2>
+
+<form method="POST" action="/addCategories">
+    <label for="inputCategory" class="sr-only">Category name</label>
+    <input id="inputCategory" name="getCategory" class="" placeholder="Category name" required="" autofocus="" style="font-size:15px;"
+        type="text">
+    <button class="btn btn-sm btn-primary" type="submit" style="margin-top: -5px;">Add</button>
+    <br> {%for cat in category%} {%if cat['Email']==session.email%}
+    <!-- Template for category -->
+    <div class="card panel cardtemplate" style="top: 5px;">
+        <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+                <a class="collapsed accordion-toggle" data-toggle="collapse" href="#collapseOne{{category.index(cat)}}" aria-expanded="false"
+                    aria-controls="collapseOne">
+                    {{cat['Categoryname']}}
+                    <a class="float-right btn btn-primary" href="/removeCategories/{{cat['Categoryname']}}/{{category.index(cat)}}">Delete </a>
+                    <a class="float-right btn btn-primary" href="/changeCategoryName/{{cat['Categoryname']}}/{{category.index(cat)}}">Edit</button>
+                        <a class="float-right btn btn-primary" href="/recipe/{{cat['Categoryname']}}">Add Recipe</a>
+                    </a>
+            </h5>
+        </div>
+
+        <div id="collapseOne{{category.index(cat)}}" class="collapse panel-collapse" role="tabpanel" aria-labelledby="headingOne"
+            data-parent="#accordion">
+            {%for rcat in recipe%} {%if rcat['Category']==cat['Categoryname'] and rcat['Email']==session.email %}
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Name:</h4>
+                        <p>{{rcat['RecipeName']}}</p>
+                        <h5 class="card-title">Ingredients:</h5>
+                        <p class="card-text">{{rcat['RecipeIngredients']}}</p>
+
+                        <h5 class="card-title">Direction:</h5>
+                        <p class="card-text">{{rcat['RecipeMethod']}}</p>
+                        <p>
+                            <a class="float-right btn btn-primary" href="/deleterecipe/{{recipe.index(rcat)}}">Delete </a>
+                            <a class="float-right btn btn-primary" href="/editrecipe/{{recipe.index(rcat)}}">Edit</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {%endif%} {%endfor%}
+        </div>
+
+    </div>
+    {%endif%}
+    <!-- End Template for category-->
+    {%endfor%}
+</form>
+{%endblock%}

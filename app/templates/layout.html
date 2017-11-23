@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='signin.css') }}">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+
+<body>
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+        <div class=flash>{{ message }}</div>
+        {% endfor %} {%block body%} {%endblock%}
+
+    </div>
+    <script src="{{ url_for('static', filename = 'jquery-slim.min.js') }} "></script>
+    <script src="{{ url_for('static', filename = 'popper.min.js') }} "></script>
+    <script src="{{ url_for('static', filename = 'bootstrap.min.js')}} "></script>
+
+</body>
+
+</html>

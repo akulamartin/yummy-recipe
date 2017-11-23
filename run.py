@@ -1,6 +1,5 @@
-# run.py
-
-from app import app
+"""This module is used with flask command"""
+from app import APP
 
 if __name__ == '__main__':
-    app.run()
+    APP.run()

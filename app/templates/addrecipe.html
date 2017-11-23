@@ -1,0 +1,17 @@
+{%extends "layout.html"%}{%block title%}Add recipe{%endblock%} {%block body%}
+<a class="float-right btn btn-primary" href="/logout">Log Out</a>
+<h2 class="form-signin-heading">Yes {{session.email}}</h2>
+<h2 class="form-signin-heading">Feel free to add a recipe to {{rcat}}:</h2>
+<form method="POST" action="/recipe/{{rcat}}">
+    <label for="inputRecipename" class="sr-only">Recipe name</label>
+    <input id="inputRecipename" name="Recipename" class="form-control" placeholder="Recipe name" required="" autofocus="" type="text">
+    <br>
+    <label for="inputRecipeingredients" class="sr-only">Ingredients</label>
+    <textarea id="inputRecipeingredients" name="Recipeingredients" class="form-control" placeholder="Ingredients" required=""></textarea>
+    <br>
+    <label for="inputRecipemethod" class="sr-only">Direction</label>
+    <textarea id="inputRecipemethod" name="Recipemethod" class="form-control" placeholder="Direction" required=""></textarea>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block form-signin" type="submit">Add Recipe</button>
+</form>
+{%endblock%}
