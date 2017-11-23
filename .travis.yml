@@ -7,14 +7,8 @@ python:
 cache: pip
 install:
   - pip install -r requirements.txt
-before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
 script:
   - python test_run.py
   - coverage run test_run.py
- after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT 
 after_success: 
   - coveralls --rcfile=.coveragerc
