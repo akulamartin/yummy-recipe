@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import Email, InputRequired
+from flask import session
 
 userlist={}
 class User(object):
@@ -12,7 +13,7 @@ class User(object):
           self.userpassword=userpassword
 
  def register_User(self,firstname,lastname,email,username,userpassword):
-            userlist = {'firstname': firstname,
+            session['userlist'] = {'firstname': firstname,
                     'lastname': lastname, 'email': email, 'username': username, 'userpassword': userpassword}
                
  def login_User(self,theusername,thepassword):

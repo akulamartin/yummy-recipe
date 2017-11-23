@@ -35,15 +35,15 @@ def UserRegistration():
     form = Registration()
     user=User()
     if form.validate_on_submit():             
-     session['Martin']=[form.regusername.data,form.regpassword.data]
+     user.register_User(form.regfirstname,form.reglastname,form.regemail,form.regusername,form.regpassword) 
      #return '{}. {}. {}.'.format(form.regusername.data, form.regpassword.data,form.regfirstname.data)
-     return render_template("index.html",message='Success')     
-    return render_template("UserRegistration.html",form=form)
+     return render_template("index.html")     
+    return render_template("UserRegistration.html")
 
 
-app.route('/logout', methods=['GET', 'POST'])
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
-    session.pop()
+    session.pop('userlist')    
     return render_template("index.html")
     
 
