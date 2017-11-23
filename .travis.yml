@@ -7,8 +7,10 @@ python:
 cache: pip
 install:
   - pip install -r requirements.txt
+before_script:  
 script:
   - python test_run.py
   - coverage run test_run.py
+after_script:  
 after_success: 
   - coveralls --rcfile=.coveragerc
