@@ -4,7 +4,6 @@ import run
 from app.classes.category import Category
 from app.classes.recipe import Recipe
 from app.classes.User import User
-from app import views
 
 class TestCategory(unittest.TestCase):
     """This class tests the category class"""
@@ -129,6 +128,26 @@ class TestApp(unittest.TestCase):
         """This method tests the route of the root"""
         result = self.app.get('/deleterecipe')
         self.assertEqual(result.status_code, 404)
+
+
+
+class TestView(unittest.TestCase):
+    """This class tests the view"""
+    def setUp(self):
+        run.APP.testing = True
+        self.app = run.APP.test_client()
+
+    def test_error_user_login(self):
+        """This method tests the user login"""
+        log = self.app.post('/', data=dict(email='martin@gmail.com', password='martin'),
+                            follow_redirects=True)
+        self.assertNotEqual(log, None)
+
+    def test_error_add_recipe(self):
+        """This method tests the user login"""
+        log = self.app.post('/editrecipe/1',
+                            follow_redirects=True)
+        self.assertNotEqual(log, None)
 
 if __name__ == '__main__':
     unittest.main()
