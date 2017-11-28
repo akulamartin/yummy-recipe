@@ -6,7 +6,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 APP = Flask(__name__)
 
 # the toolbar is only enabled in debug mode:
-APP.debug = True
+APP.debug = False
 
 # set a 'SECRET_KEY' to enable the Flask session cookies
 APP.config['SECRET_KEY'] = 'drums are 808'

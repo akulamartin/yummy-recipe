@@ -5,8 +5,8 @@ language: python
 python:
   - "3.6.2"
 cache: pip
-install:
-  - pip install -r requirements.txt
+#install:
+#  - pip install -r requirements.txt
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
@@ -17,4 +17,4 @@ script:
 after_script:
   - ./cc-test-reporter after-build --exit-code 0  
 after_success: 
-  - coveralls --rcfile=.coveragerc
+  - coveralls 
