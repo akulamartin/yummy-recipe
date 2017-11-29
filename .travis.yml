@@ -1,6 +1,7 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=0004fa134816e5d29d9b8905dd359086880db44e00fa9cf4d3050eda3c78123b
+    - CODACY_PROJECT_TOKEN=475eddbcf64c47bba6a85b251d6cb5f5
 language: python
 python:
   - "3.6.2"
@@ -14,7 +15,8 @@ before_script:
 script:
   - python test_run.py
   - coverage run test_run.py
-  - coverage html --skip-covered
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
 after_script:
   - ./cc-test-reporter after-build --exit-code 0  
 after_success: 
