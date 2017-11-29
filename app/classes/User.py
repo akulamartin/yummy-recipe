@@ -14,10 +14,8 @@ class User(object):
         """This method is used to login the user"""
         self.email = email
         self.password = password
-        if email not in USER_LIST:
-            return 'Invalid E-mail.Have you registered'
-        elif password not in USER_LIST:
-            return 'Invalid Password'
+        if email and password not in USER_LIST:
+            return 'Invalid User.Have you registered'
 
         session['email'] = email
         session['password'] = password
