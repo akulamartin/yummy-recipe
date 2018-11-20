@@ -3,6 +3,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/abbeb0a33a588ec589c9/maintainability)](https://codeclimate.com/github/akulamartin/yummy-recipe/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/abbeb0a33a588ec589c9/test_coverage)](https://codeclimate.com/github/akulamartin/yummy-recipe/test_coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/513d3e6806a6426db8d1a6fb78953992)](https://www.codacy.com/app/akulamartin/yummy-recipe?utm_source=github.com&utm_medium=referral&utm_content=akulamartin/yummy-recipe&utm_campaign=Badge_Coverage)
+[![Requirements Status](https://requires.io/github/akulamartin/yummy-recipe/requirements.svg?branch=master)](https://requires.io/github/akulamartin/yummy-recipe/requirements/?branch=master)
+
 
 # Yummy Recipe
 
